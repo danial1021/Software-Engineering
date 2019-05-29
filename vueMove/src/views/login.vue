@@ -59,7 +59,7 @@
             <v-icon>perm_identity</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>About-Web-Developers</v-list-tile-title>
+            <v-list-tile-title>About-Web-Developer</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 

@@ -59,7 +59,7 @@
             <v-icon>perm_identity</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>About-Web-Developers</v-list-tile-title>
+            <v-list-tile-title>About-Web-Developer</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -110,13 +110,232 @@
         </v-avatar>
       </v-btn>
     </v-toolbar>
+
+
+
+  <div class="row">
+
+    <div class="col" style="margin-top:30px">
+      <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="200px"
+        >
+        </v-img>
+
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">Home</div>
+            <span class="grey--text">1,000 miles of wonder</span>
+          </div>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon @click="show1 = !show1">
+            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+
+        <v-slide-y-transition>
+          <v-card-text v-show="show1">
+            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+          </v-card-text>
+        </v-slide-y-transition>
+      </v-card>
+    </v-flex>
+  </v-layout>
+    </div>
+
+  <div class="col" style="margin-top:30px">
+    <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="200px"
+        >
+        </v-img>
+
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">Inquire</div>
+            <span class="grey--text">1,000 miles of wonder</span>
+          </div>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon @click="show1 = !show1">
+            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+
+        <v-slide-y-transition>
+          <v-card-text v-show="show1">
+            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+          </v-card-text>
+        </v-slide-y-transition>
+      </v-card>
+    </v-flex>
+  </v-layout>
+  </div>
+
+  <div class="col" style="margin-top:30px">
+    <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="200px"
+        >
+        </v-img>
+
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">Store</div>
+            <span class="grey--text">1,000 miles of wonder</span>
+          </div>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon @click="show1 = !show1">
+            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+
+        <v-slide-y-transition>
+          <v-card-text v-show="show1">
+            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+          </v-card-text>
+        </v-slide-y-transition>
+      </v-card>
+    </v-flex>
+  </v-layout>
+  </div>
+
+</div>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<div class="row">
+
+    <div class="col" style="margin-top:30px">
+      <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="200px"
+        >
+        </v-img>
+
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">Usage-Info</div>
+            <span class="grey--text">1,000 miles of wonder</span>
+          </div>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon @click="show2 = !show2">
+            <v-icon>{{ show2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+
+        <v-slide-y-transition>
+          <v-card-text v-show="show2">
+            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+          </v-card-text>
+        </v-slide-y-transition>
+      </v-card>
+    </v-flex>
+  </v-layout>
+    </div>
+
+  <div class="col" style="margin-top:30px">
+    <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="200px"
+        >
+        </v-img>
+
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">Send-Feedback</div>
+            <span class="grey--text">1,000 miles of wonder</span>
+          </div>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon @click="show2 = !show2">
+            <v-icon>{{ show2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+
+        <v-slide-y-transition>
+          <v-card-text v-show="show2">
+            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+          </v-card-text>
+        </v-slide-y-transition>
+      </v-card>
+    </v-flex>
+  </v-layout>
+  </div>
+
+  <div class="col" style="margin-top:30px">
+    <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="200px"
+        >
+        </v-img>
+
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">Web-Developer</div>
+            <span class="grey--text">1,000 miles of wonder</span>
+          </div>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon @click="show2 = !show2">
+            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+
+        <v-slide-y-transition>
+          <v-card-text v-show="show2">
+            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+          </v-card-text>
+        </v-slide-y-transition>
+      </v-card>
+    </v-flex>
+  </v-layout>
+  </div>
+
+</div>
+
   </v-app>
 </template>
 
 <script>
   export default {
     data: () => ({
-      drawer: null
+      drawer: null,
+      show1: false,
+      show2: false
     }),
     props: {
       source: String
