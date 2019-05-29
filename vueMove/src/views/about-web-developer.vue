@@ -132,7 +132,10 @@
         <v-container>
           <v-layout>
             <v-flex xs10>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+              학원 선생님 혹은 학교 방과후 선생님을 하시는 분들은 자신의 스케줄에 따라서 움직이고 생활하는데,
+              불가피하게 시간을 옮기거나 조절해야하는 상황에서 각각의 아이의 부모님들에게 전화하여 아이의 시간을
+              묻고 조절해야하는 불편함이 있다. 이에 아이나 아이의 부모님이 자신의 스케줄을 입력할 수 있는 
+              웹페이지를 만듦으로써 without calling 스케줄을 조절할 수 있도록 도울 수 있는 웹을 만들었습니다.
             </v-flex>
             <v-flex xs2>
               <v-icon size="64">mdi-calendar-text</v-icon>
@@ -159,10 +162,12 @@
         <v-container>
           <v-layout>
             <v-flex xs8>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
-            </v-flex>
-            <v-flex xs4>
-              Lorem ipsum dolor sit amet, no nam oblique veritus.
+              각 사용자가 이용할 수 있도록 전체적인 디자인 틀을 생각해보고,
+              기본적인 웹사이트의 기능, 그리고 사용자가 사용자의 스케줄을 
+              저장할 수 있는 기능과 그것을 선생님(관리자)가 조회할 수 있도록 
+              하는 기능을 생각하여 계획한다. 언어는 node.js, javascript을 
+              이용하고 또한, fronthand를 vue, vuetify을 이용하여 디자인하도록 계획했습니다.
+              (vue는 node.js의 express 프레임워크 위에서 동작합니다.)
             </v-flex>
           </v-layout>
         </v-container>
@@ -186,13 +191,12 @@
           <h2 class="display-1 white--text font-weight-light">디자인 및 fronthand 만들기</h2>
         </v-card-title>
         <v-container>
-          <v-layout>
-            <v-flex
-              v-for="n in 3"
-              :key="n"
-              xs4
-            >
-              Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.
+          <v-layout wrap>
+            <v-flex>
+              전체적인 틀을 vuetify의 테마을 이용하여 구현합니다. 내가 필요한 메뉴로 리뉴얼 한 후 각각의 페이지을 기능에 맞게 fronthand을 구현합니다. 이런식으로 각각의 페이지를 구성합니다.
+            </v-flex>
+            <v-flex>
+              전체 웹페이지의 fronthand가 완성되면, 여러 효과를 통하여 웹페이지를 좀 더 멋지게 바꿔줍니다. 또한, margin을 이용하여 배열에 신경쓰고, 기능 설명에 대한 설명을 기술합니다!
             </v-flex>
           </v-layout>
         </v-container>

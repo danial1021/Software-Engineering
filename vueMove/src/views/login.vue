@@ -112,8 +112,49 @@
     </v-toolbar>
 
 <!-- login_form 시작 -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <header class="card-header">
+            <h3 class="card-title mt-2">Login</h3>
+        </header>
 
-</div>
+      <article class="card-body">
+
+      <form>
+        <div class="form-row">
+
+          <div class="col form-group">
+            <label>Id </label>   
+              <input type="text" class="form-control" placeholder="" maxlength="15">
+          </div> <!-- form-group end.// -->
+        </div> <!-- form-row end.// -->
+
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="email" class="form-control" placeholder="" maxlength="30">
+          <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div> <!-- form-group end.// -->
+
+        <div class="form-group">
+          <label>Password</label>
+            <input class="form-control" type="password" maxlength="15">
+        </div> <!-- form-group end.// -->   
+
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block" > Submit  </button>
+          </div> <!-- form-group// -->      
+      </form>
+
+      </article> <!-- card-body end .// -->
+      <div class="border-top card-body text-center">You don't have an account? <a href="/signup">SignUp</a></div>
+      </div> <!-- card.// -->
+    </div> <!-- col.//-->
+  </div> <!-- row.//-->
+</div>           
+<!--container end.//-->
+
   <!-- login_form 끝 -->
   </v-app>
 </template>
