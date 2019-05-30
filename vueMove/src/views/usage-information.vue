@@ -128,7 +128,7 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Home</div>
-            <span class="grey--text">1,000 miles of wonder</span>
+            <span class="grey--text">Go to main page(Home)</span>
           </div>
         </v-card-title>
 
@@ -141,7 +141,10 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show1">
-            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+              메인 홈에서 들어서면 달력이 보이게 되어있습니다. 달력을 위에 방향키 아이콘을 이용하여 다음 날짜,
+              이전 날짜로 돌아갈 수 있게 합니다. type에 따라서 월, 일, 지정 날짜 , 주 등 여러 가지 간격으로 
+              설정할 수 있습니다. 달력 테마는 dark 버튼으로 어둡게 할 수 있으며, 지정한 일정 상자의 색깔은 color에서 바꾸실 수 있습니다.
+              
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
@@ -162,7 +165,7 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Inquire</div>
-            <span class="grey--text">1,000 miles of wonder</span>
+            <span class="grey--text">Inquire user's schedule</span>
           </div>
         </v-card-title>
 
@@ -196,7 +199,7 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Store</div>
-            <span class="grey--text">1,000 miles of wonder</span>
+            <span class="grey--text">Save the schedule</span>
           </div>
         </v-card-title>
 
@@ -236,7 +239,7 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Usage-Info</div>
-            <span class="grey--text">1,000 miles of wonder</span>
+            <span class="grey--text">How to use webpage</span>
           </div>
         </v-card-title>
 
@@ -270,7 +273,7 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Send-Feedback</div>
-            <span class="grey--text">1,000 miles of wonder</span>
+            <span class="grey--text">For improving website</span>
           </div>
         </v-card-title>
 
@@ -304,7 +307,7 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Web-Developer</div>
-            <span class="grey--text">1,000 miles of wonder</span>
+            <span class="grey--text">Who create this website</span>
           </div>
         </v-card-title>
 
