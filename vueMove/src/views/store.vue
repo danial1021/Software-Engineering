@@ -380,29 +380,8 @@
       </v-sheet>
     </v-flex>
   </v-layout>
-  <!-- 달력 끝 -->
-  
-    <v-layout row wrap>
-      <v-flex xs12 sm12 md6 offset-md3>
-          <v-card-text style="height: 100px; position: relative">
-            <v-fab-transition>
-              <v-btn
-                v-show="!hidden"
-                color="pink"
-                dark
-                absolute
-                top
-                right
-                fab
-              >
-                <v-icon>add</v-icon>
-              </v-btn>
-            </v-fab-transition>
-          </v-card-text>
-      </v-flex>
-    </v-layout>
-
-
+  <!-- 달력 끝 -->  
+    
   </v-app>
 </template>
 
