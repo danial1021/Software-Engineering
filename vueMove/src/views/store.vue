@@ -16,6 +16,17 @@
           </v-list-tile-content>
         </v-list-tile>
 
+
+        <v-list-tile @click="v-on" href="/my-page">
+          <v-list-tile-action>
+            <v-icon>sentiment_satisfied_alt</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>My-Page</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+
         <v-list-tile @click="v-on" href="/inquire">
           <v-list-tile-action>
             <v-icon>assignment_ind</v-icon>
@@ -381,7 +392,7 @@
     </v-flex>
   </v-layout>
   <!-- 달력 끝 -->  
-    
+
   </v-app>
 </template>
 

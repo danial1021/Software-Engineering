@@ -16,6 +16,14 @@
           </v-list-tile-content>
         </v-list-tile>
 
+        <v-list-tile @click="v-on" href="/my-page">
+          <v-list-tile-action>
+            <v-icon>sentiment_satisfied_alt</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>My-Page</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
 
         <v-list-tile @click="v-on" href="/inquire">
           <v-list-tile-action>

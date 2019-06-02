@@ -17,6 +17,16 @@
         </v-list-tile>
 
 
+        <v-list-tile @click="v-on" href="/my-page">
+          <v-list-tile-action>
+            <v-icon>sentiment_satisfied_alt</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>My-Page</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+
         <v-list-tile @click="v-on" href="/inquire">
           <v-list-tile-action>
             <v-icon>assignment_ind</v-icon>
@@ -152,9 +162,9 @@
             ref="phone_number"
             v-model="phone_number"
             :rules="[() => !!phone_number || 'This field is required']"
-            label="phone_number"
+            label="phone_number or email"
             required
-            placeholder="010-OOOO-OOOO"
+            placeholder="010-OOOO-OOOO or xxx@xxx.xxx"
           ></v-text-field>
 
             <br>
@@ -174,12 +184,12 @@
         <hr class="hr1">
 
         <v-textarea
-            v-model="title"
-            label="Message about your opinion"
+            v-model="message"
+            placeholder="Message about your opinion"
             counter
             maxlength="500"
             full-width
-            
+            required
         ></v-textarea>
 
         </v-card-text>
