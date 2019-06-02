@@ -137,8 +137,8 @@
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Home</div>
-            <span class="grey--text">Go to main page(Home)</span>
+            <div class="headline">My-Page</div>
+            <span class="grey--text">Revised information</span>
           </div>
         </v-card-title>
 
@@ -151,10 +151,10 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show1">
-              메인 홈에서 들어서면 달력이 보이게 되어있습니다. 달력을 위에 방향키 아이콘을 이용하여 다음 날짜,
-              이전 날짜로 돌아갈 수 있게 합니다. type에 따라서 월, 일, 지정 날짜 , 주 등 여러 가지 간격으로 
-              설정할 수 있습니다. 달력 테마는 dark 버튼으로 어둡게 할 수 있으며, 지정한 일정 상자의 색깔은 color에서 바꾸실 수 있습니다.
-              
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Maxime, commodi architecto. At consequatur doloremque ab tenetur ad, 
+              eius nulla officia, recusandae maiores corrupti in. 
+              Fugiat dolores vel incidunt illum architecto.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
