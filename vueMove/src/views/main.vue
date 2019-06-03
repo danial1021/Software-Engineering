@@ -80,10 +80,10 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>
         <v-btn icon large>
-        <v-avatar size="60px" tile>
+         <v-avatar size="60px">
           <img
-            src="https://media.discordapp.net/attachments/449047222462447617/582457973658615808/1.png?width=1218&height=670"
-            alt="Vuetify"
+            src="https://cdn.discordapp.com/attachments/449047222462447617/584982883819585548/2.png"
+            alt="Logo"
           >
         </v-avatar>
       </v-btn>

@@ -80,10 +80,10 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>
         <v-btn icon large>
-        <v-avatar size="60px" tile>
+        <v-avatar size="60px">
           <img
-            src="https://media.discordapp.net/attachments/449047222462447617/582457973658615808/1.png?width=1218&height=670"
-            alt="Vuetify"
+            src="https://cdn.discordapp.com/attachments/449047222462447617/584982883819585548/2.png"
+            alt="Logo"
           >
         </v-avatar>
       </v-btn>
@@ -120,6 +120,42 @@
         </v-avatar>
       </v-btn>
     </v-toolbar>
+    <!---->
+   
+    <v-container fluid grid-list-md>
+       <v-layout>
+         <div>
+          <v-btn
+            color="secondary"
+          >
+            INCLUDE
+            <v-icon right dark>favorite</v-icon>
+          </v-btn>
+
+          <v-btn
+            color="blue-grey"
+            class="white--text"
+          >
+            DELETE
+            <v-icon right dark>favorite_border</v-icon>
+          </v-btn>
+        </div> 
+
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+
+        <v-btn round color="primary" dark href="/inquire">RESET
+          <v-icon right drak>touch_app</v-icon>
+        </v-btn>
+
+        </v-layout>
+        <hr>
+    </v-container>
+    <!---->
+
+
+
+    <!---->
   </v-app>
 </template>
 
@@ -131,5 +167,13 @@
     props: {
       source: String
     }
-  }
+  }  
 </script>
+
+<style>
+  hr{
+    height: 10px;
+    background-color: #BBDEFB;
+  }
+</style>
+  

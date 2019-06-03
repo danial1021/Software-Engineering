@@ -80,10 +80,10 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>
         <v-btn icon large>
-        <v-avatar size="60px" tile>
+        <v-avatar size="60px">
           <img
-            src="https://media.discordapp.net/attachments/449047222462447617/582457973658615808/1.png?width=1218&height=670"
-            alt="Vuetify"
+            src="https://cdn.discordapp.com/attachments/449047222462447617/584982883819585548/2.png"
+            alt="Logo"
           >
         </v-avatar>
       </v-btn>
@@ -121,7 +121,6 @@
       </v-btn>
     </v-toolbar>
 <!---->
-  <!-- login_form 시작 -->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -134,39 +133,25 @@
 
       <form>
         <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option>day</option>
-              <option>week</option>
-              <option>month</option>
-            </select>
-           </div> 
-  
           <div class="form-group col-md-8">
             <label for="inputState">Date</label>
-            <select id="inputState" class="form-control">
-              <option>Sunday - Saturday</option>
-              <option>Mon, Wed, Fri</option>
-              <option>Mon - Fri</option>
-              <option>Mon - Sun</option>
-            </select>
+            <input type="text" class="form-control" placeholder="">
           </div>
         </div>
 
         <div class="form-group">
-          <label>Email address</label>
-          <input type="email" class="form-control" placeholder="" maxlength="30">
-          <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label>Summary_Schedule</label>
+          <input type="text" class="form-control" placeholder="" maxlength="20">
+          <small class="form-text text-muted">We'll never share your schedule with anyone else.</small>
         </div> <!-- form-group end.// -->
 
         <div class="form-group">
           <label>Password</label>
-            <input class="form-control" type="password" maxlength="15">
+            <input class="form-control" type="password" maxlength="">
         </div> <!-- form-group end.// -->   
 
           <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block" > Submit  </button>
+              <button type="submit" class="btn btn-primary btn-block" >Submit</button>
           </div> <!-- form-group// -->      
       </form>
 
@@ -175,9 +160,7 @@
     </div> <!-- col.//-->
   </div> <!-- row.//-->
 </div>           
-<!--container end.//-->
-
-  <!-- login_form 끝 -->  
+<!--container end.//-->  
 <!---->
 
  </v-app>
