@@ -1,0 +1,18 @@
+var express = require('express');
+var createError = require('http-errors');
+var router = express.Router();
+
+router.get('/', function(req, res, next) {
+  res.send({ msg: 'hello', a: 'helloworld' })
+});
+
+router.get('/hello', function(req, res, next) {
+  res.send({ msg: 'hello', a: 1111 })
+});
+
+// 페이지가 없어서 404를 띄우게 하는 것
+router.all('*', function(req, res, next) {
+  next(createError(404, 'API를 찾을 수 없습니다.'));
+});
+
+module.exports = router;

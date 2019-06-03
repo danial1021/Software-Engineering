@@ -1,4 +1,0 @@
-사용정보 탭 -> Timelines, tabs로 설명
-개발자소개 -> v-window
-
-
