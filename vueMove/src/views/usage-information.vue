@@ -145,16 +145,16 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon @click="show1 = !show1">
-            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+            <v-icon>{{ show1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
           </v-btn>
         </v-card-actions>
 
         <v-slide-y-transition>
           <v-card-text v-show="show1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Maxime, commodi architecto. At consequatur doloremque ab tenetur ad, 
-              eius nulla officia, recusandae maiores corrupti in. 
-              Fugiat dolores vel incidunt illum architecto.
+              I'm a thing. But, like most politicians, he promised more than he could deliver. 
+              You won't have time for sleeping, soldier, not with all the bed making you'll be doing. 
+              Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! 
+              You're going to do his laundry? I've got to find a way to escape.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
@@ -182,7 +182,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon @click="show1 = !show1">
-            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+            <v-icon>{{ show1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
           </v-btn>
         </v-card-actions>
 
@@ -216,7 +216,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon @click="show1 = !show1">
-            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+            <v-icon>{{ show1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
           </v-btn>
         </v-card-actions>
 
@@ -248,7 +248,7 @@
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Usage-Info</div>
+            <div class="headline">Usage-Information</div>
             <span class="grey--text">How to use webpage</span>
           </div>
         </v-card-title>
@@ -324,7 +324,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon @click="show2 = !show2">
-            <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+            <v-icon>{{ show2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
           </v-btn>
         </v-card-actions>
 

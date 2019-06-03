@@ -121,8 +121,10 @@
       </v-btn>
     </v-toolbar>
     <!---->
-   
-    <v-container fluid grid-list-md>
+   <div class="row" style="padding-right:15px">
+
+      <div class="col">
+      <v-container grid-list-md>
        <v-layout>
          <div>
           <v-btn
@@ -150,12 +152,146 @@
 
         </v-layout>
         <hr>
-    </v-container>
-    <!---->
+      </v-container>
+      </div>
+  </div>
+    
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+    
+  <div class="row">
+    <div class="container row mx-auto">
+      <div class="row col-md">
+        <div class = "left" style="margin-bottom:20px">
+          <div>
+            <div class="card">
+              <header class="card-header">
+                  <h3 class="card-title mt-2">User1</h3>
+              </header>
 
+            <article class="card-body">
 
+            <form>
+              <div class="form-row">
+                <div class="col form-group">
+                  <label>Id</label>   
+                    <input type="text" class="form-control" placeholder="" maxlength="15">
+                </div> 
+              </div> <!-- form-row end.// -->
 
-    <!---->
+              <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" placeholder="" maxlength="30">
+                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div> 
+
+              <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" maxlength="15">
+              </div>      
+            </form>
+
+            </article>
+            </div> 
+          </div>
+        </div>
+
+        <div class = "left">
+          <div>
+            <div class="card">
+              <header class="card-header">
+                  <h3 class="card-title mt-2">User2</h3>
+              </header>
+
+            <article class="card-body">
+
+            <form>
+              <div class="form-row">
+                <div class="col form-group">
+                  <label>Id</label>   
+                    <input type="text" class="form-control" placeholder="" maxlength="15">
+                </div> 
+              </div> <!-- form-row end.// -->
+
+              <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" placeholder="" maxlength="30">
+                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div> 
+
+              <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" maxlength="15">
+              </div>       
+            </form>
+
+            </article>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class = "col-md long right">
+        <div>
+          <div class="card">
+            <header class="card-header">
+                <h3 class="card-title mt-2">Administrator</h3>
+            </header>
+
+          <article class="card-body">
+
+          <form>
+            <div class="form-row">
+              <div class="col form-group">
+                <label>Id </label>   
+                  <input type="text" class="form-control" placeholder="" maxlength="15">
+              </div> 
+            </div> <!-- form-row end.// -->
+
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="email" class="form-control" placeholder="" maxlength="30">
+              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div> 
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" maxlength="15">
+            </div> 
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" maxlength="15">
+            </div>    
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" maxlength="15">
+            </div>    
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" maxlength="15">
+            </div>    
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" maxlength="15">
+            </div>    
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" maxlength="15">
+            </div>    
+            
+                 
+          </form>
+
+          </article>
+          </div> 
+        </div>
+      </div> 
+    </div>           
+    </div>
   </v-app>
 </template>
 
@@ -167,13 +303,32 @@
     props: {
       source: String
     }
-  }  
+  } 
 </script>
+
 
 <style>
   hr{
     height: 6px;
+    width: 100%;
     background-color: #BBDEFB;
+  }
+  .long{
+    height: 100%;
+  }
+  .left{
+    padding-right: 45px;
+    width: 501px;
+  }
+  .right{
+    padding-left: 45px; 
+  }
+  .test{
+    margin-right: 40px;
+  }
+  .article.card-body{
+    height: 100%;
   }
 </style>
   
+<!-- overflow: ture;-->
