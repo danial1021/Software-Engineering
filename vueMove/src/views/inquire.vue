@@ -172,7 +172,7 @@
 
 <style>
   hr{
-    height: 10px;
+    height: 6px;
     background-color: #BBDEFB;
   }
 </style>
