@@ -123,6 +123,7 @@
    
 <!-- 달력 시작-->
   <v-layout wrap>
+
     <v-flex
       xs12
       class="mb-3"
@@ -144,15 +145,13 @@
       class="text-sm-left text-xs-center"
     >
       <v-btn @click="$refs.calendar.prev()">
-        <v-icon
-          dark
-          left
-        >
+        <v-icon dark left>
           keyboard_arrow_left
         </v-icon>
         Prev
       </v-btn>
     </v-flex>
+
     <v-flex
       sm4
       xs12
@@ -164,6 +163,7 @@
         label="Type"
       ></v-select>
     </v-flex>
+
     <v-flex
       sm4
       xs12
@@ -171,14 +171,12 @@
     >
       <v-btn @click="$refs.calendar.next()">
         Next
-        <v-icon
-          right
-          dark
-        >
+        <v-icon right dark>
           keyboard_arrow_right
         </v-icon>
       </v-btn>
     </v-flex>
+
   </v-layout>
   <!-- 달력 끝 -->
   </v-app>
@@ -193,8 +191,8 @@
         source: String
       },
       type: 'month',
-      start: '2019-01-01',
-      end: '2019-01-06',
+      start: Date.now.month,
+      end: new Date (),
       typeOptions: [
         { text: 'Day', value: 'day' },
         { text: 'Week', value: 'week' },
