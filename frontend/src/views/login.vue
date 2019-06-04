@@ -149,7 +149,7 @@
 
         <div class="form-group">
           <label>Password</label>
-            <input class="form-control" type="password" maxlength="15">
+            <input class="form-control" type="password" maxlength="30">
         </div> <!-- form-group end.// -->   
 
           <div class="form-group">
