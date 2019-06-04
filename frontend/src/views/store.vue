@@ -133,20 +133,62 @@
       <article class="card-body">
 
       <form>
-        <div class="form-row">
+        <!-- -->
+         <v-layout row wrap>
+           &nbsp;&nbsp;
+          <v-flex xs12 sm6 md4>
+            <v-menu
+              v-model="menu1"
+              :close-on-content-click="false"
+              :nudge-right="40"
+              lazy
+              transition="scale-transition"
+              offset-y
+              full-width
+              min-width="290px"
+            >
+              <template v-slot:activator="{ on }">
+                <v-text-field
+                  v-model="date1"
+                  label="Start-Date"
+                  prepend-icon="event"
+                  readonly
+                  v-on="on"
+                ></v-text-field>
+              </template>
+              <v-date-picker v-model="date1" @input="menu1 = false"></v-date-picker>
+            </v-menu>
+          </v-flex>
 
-          <div class="col form-group"> 
-              <label for="inputState">Start-Date</label>
-              <input type="text" class="form-control" placeholder="">
-          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-          <div class="col form-group">
-              <label for="inputState">End-Date</label>  
-              <input type="text" class="form-control" placeholder=" ">
-          </div>
-
-        </div>
-
+          <v-flex xs12 sm6 md4>
+            <v-menu
+              v-model="menu2"
+              :close-on-content-click="false"
+              :nudge-right="40"
+              lazy
+              transition="scale-transition"
+              offset-y
+              full-width
+              min-width="290px"
+            >
+              <template v-slot:activator="{ on }">
+                <v-text-field
+                  v-model="date2"
+                  label="End-Date"
+                  prepend-icon="event"
+                  readonly
+                  v-on="on"
+                ></v-text-field>
+              </template>
+              <v-date-picker v-model="date2" @input="menu2 = false"></v-date-picker>
+            </v-menu>
+          </v-flex>
+        </v-layout>
+        
+        <!-- -->
 
         <div class="form-group">
           <label>Summary_Schedule</label>
@@ -179,7 +221,11 @@
   export default {
     data: () => ({
       drawer: null,
-      hidden: false
+      hidden: false,
+      date1: new Date().toISOString().substr(0, 10),
+      date2: new Date().toISOString().substr(0, 10),
+      menu1: false,
+      menu2: false
     }),
     props: {
       source: String
@@ -187,4 +233,3 @@
   }
 
 </script>
-
