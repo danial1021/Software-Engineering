@@ -174,7 +174,7 @@
               기본적인 웹사이트의 기능, 그리고 사용자가 사용자의 스케줄을 
               저장할 수 있는 기능과 그것을 선생님(관리자)가 조회할 수 있도록 
               하는 기능을 생각하여 계획한다. 언어는 node.js, javascript을 
-              이용하고 또한, fronthand를 vue, vuetify을 이용하여 디자인하도록 계획했습니다.
+              이용하고 또한, frontend를 vue, vuetify을 이용하여 디자인하도록 계획했습니다.
               (vue는 node.js의 express 프레임워크 위에서 동작합니다.)
             </v-flex>
           </v-layout>
@@ -196,15 +196,15 @@
           >
             mdi-email-outline
           </v-icon>
-          <h2 class="display-1 white--text font-weight-light">디자인 및 fronthand 만들기</h2>
+          <h2 class="display-1 white--text font-weight-light">디자인 및 frontend 만들기</h2>
         </v-card-title>
         <v-container>
           <v-layout wrap>
             <v-flex>
-              전체적인 틀을 vuetify의 테마을 이용하여 구현합니다. 내가 필요한 메뉴로 리뉴얼 한 후 각각의 페이지을 기능에 맞게 fronthand을 구현합니다. 이런식으로 각각의 페이지를 구성합니다.
+              전체적인 틀을 vuetify의 테마을 이용하여 구현합니다. 내가 필요한 메뉴로 리뉴얼 한 후 각각의 페이지을 기능에 맞게 frontend을 구현합니다. 이런식으로 각각의 페이지를 구성합니다.
             </v-flex>
             <v-flex>
-              전체 웹페이지의 fronthand가 완성되면, 여러 효과를 통하여 웹페이지를 좀 더 멋지게 바꿔줍니다. 또한, margin을 이용하여 배열에 신경쓰고, 기능 설명에 대한 설명을 기술합니다!
+              전체 웹페이지의 frontend가 완성되면, 여러 효과를 통하여 웹페이지를 좀 더 멋지게 바꿔줍니다. 또한, margin을 이용하여 배열에 신경쓰고, 기능 설명에 대한 설명을 기술합니다!
             </v-flex>
           </v-layout>
         </v-container>
@@ -219,7 +219,7 @@
     >
       <v-card>
         <v-card-title class="red lighten-1 justify-end">
-          <h2 class="display-1 mr-3 white--text font-weight-light">backhand 만들기</h2>
+          <h2 class="display-1 mr-3 white--text font-weight-light">backhend 만들기</h2>
           <v-icon
             dark
             size="42"

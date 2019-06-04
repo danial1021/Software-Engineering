@@ -85,7 +85,7 @@
             src="https://cdn.discordapp.com/attachments/449047222462447617/584982883819585548/2.png"
             alt="Logo"
           >
-        </v-avatar>>
+        </v-avatar>
       </v-btn>
         MWC
       </v-toolbar-title>

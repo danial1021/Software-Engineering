@@ -120,6 +120,7 @@
         </v-avatar>
       </v-btn>
     </v-toolbar>
+    
 <!---->
 <div class="container">
   <div class="row justify-content-center">
@@ -133,34 +134,41 @@
 
       <form>
         <div class="form-row">
-          <div class="form-group col-md-8">
-            <label for="inputState">Date</label>
-            <input type="text" class="form-control" placeholder="">
+
+          <div class="col form-group"> 
+              <label for="inputState">Start-Date</label>
+              <input type="text" class="form-control" placeholder="">
           </div>
+
+          <div class="col form-group">
+              <label for="inputState">End-Date</label>  
+              <input type="text" class="form-control" placeholder=" ">
+          </div>
+
         </div>
+
 
         <div class="form-group">
           <label>Summary_Schedule</label>
           <input type="text" class="form-control" placeholder="" maxlength="20">
           <small class="form-text text-muted">We'll never share your schedule with anyone else.</small>
-        </div> <!-- form-group end.// -->
+        </div> 
 
         <div class="form-group">
           <label>Password</label>
             <input class="form-control" type="password" maxlength="">
-        </div> <!-- form-group end.// -->   
+        </div>    
 
           <div class="form-group">
               <button type="submit" class="btn btn-primary btn-block" >Submit</button>
-          </div> <!-- form-group// -->      
+          </div>      
       </form>
 
-      </article> <!-- card-body end .// -->
-      </div> <!-- card.// -->
-    </div> <!-- col.//-->
-  </div> <!-- row.//-->
+      </article> 
+      </div> 
+    </div> 
+  </div> 
 </div>           
-<!--container end.//-->  
 <!---->
 
  </v-app>
