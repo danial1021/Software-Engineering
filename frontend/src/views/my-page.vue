@@ -94,7 +94,7 @@
        <v-layout row wrap>
         <v-flex>
           <v-card>
-            <v-btn color="purple accent-4" href="/login">Login
+            <v-btn color="purple accent-4" href="/login">Login&nbsp;
             <v-icon>account_circle</v-icon>
             </v-btn>
           </v-card>
