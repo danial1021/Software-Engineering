@@ -126,9 +126,13 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
-        <header class="card-header">
+          <header class="card-header">
             <h3 class="card-title mt-2">Store-Form</h3>
-        </header>
+            <v-spacer></v-spacer>
+            <v-btn round color="primary" dark href="/store">RESET
+              <v-icon right drak>touch_app</v-icon>
+            </v-btn>
+          </header>
 
       <article class="card-body">
 
@@ -160,8 +164,8 @@
             </v-menu>
           </v-flex>
 
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;
 
           <v-flex xs12 sm6 md4>
             <v-menu
@@ -190,19 +194,32 @@
         
         <!-- -->
 
+
+        <v-layout wrap>
+          <v-flex xs12 sm6 d-flex>
+            <v-select
+              :items="items"
+              label="Weekdays"
+            ></v-select>
+          </v-flex>
+        </v-layout>
+  
+
+        <!-- -->
+
         <div class="form-group">
           <label>Summary_Schedule</label>
-          <input type="text" class="form-control" placeholder="" maxlength="20">
+          <input type="text" class="form-control" placeholder="20자 내외로 입력해주세요..." maxlength="20">
           <small class="form-text text-muted">We'll never share your schedule with anyone else.</small>
         </div> 
 
         <div class="form-group">
           <label>Password</label>
-            <input class="form-control" type="password" maxlength="">
+            <input class="form-control" type="password" maxlength="30" placeholder="패스워드를 입력하세요...">
         </div>    
 
           <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+              <button type="submit" class="btn btn-primary btn-block" >Save</button>
           </div>      
       </form>
 
@@ -225,7 +242,13 @@
       date1: new Date().toISOString().substr(0, 10),
       date2: new Date().toISOString().substr(0, 10),
       menu1: false,
-      menu2: false
+      menu2: false,
+      items: [
+        { text: 'Sunday - Saturday'},
+        { text: 'Mon, Wed, Fri' },
+        { text: 'Mon - Fri'},
+        { text: 'Mon - Sun'}
+      ]
     }),
     props: {
       source: String
