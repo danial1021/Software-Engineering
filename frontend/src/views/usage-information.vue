@@ -64,12 +64,12 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/about-web-developer">
+        <v-list-tile @click="v-on" href="/web-development-course">
           <v-list-tile-action>
             <v-icon>perm_identity</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>About-Web-Developer</v-list-tile-title>
+            <v-list-tile-title>Web Development Course</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -80,7 +80,7 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>
         <v-btn icon large>
-        <v-avatar size="60px">
+        <v-avatar>
           <img
             src="https://cdn.discordapp.com/attachments/449047222462447617/584982883819585548/2.png"
             alt="Logo"
@@ -282,7 +282,7 @@
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Send-Feedback</div>
+            <div class="headline">Send-Feedback-Think</div>
             <span class="grey--text">For improving website</span>
           </div>
         </v-card-title>
@@ -316,7 +316,7 @@
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Web-Developer</div>
+            <div class="headline">Development-Process</div>
             <span class="grey--text">Who create this website</span>
           </div>
         </v-card-title>

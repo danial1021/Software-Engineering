@@ -33,9 +33,9 @@ export default new Router({
       component: () => import('./views/send-feedback.vue')
     },
     {
-      path: '/about-web-developer',
-      name: 'about-web-developer',
-      component: () => import('./views/about-web-developer.vue')
+      path: '/web-development-course',
+      name: 'web-development-course',
+      component: () => import('./views/web-development-course.vue')
     },
     {
       path: '/login',

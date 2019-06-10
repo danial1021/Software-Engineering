@@ -62,12 +62,12 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/about-web-developer">
+        <v-list-tile @click="v-on" href="/web-development-course">
           <v-list-tile-action>
             <v-icon>perm_identity</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>About-Web-Developer</v-list-tile-title>
+            <v-list-tile-title>Web Development Course</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -78,14 +78,14 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>
         <v-btn icon large>
-        <v-avatar size="60px">
-          <img
-            src="https://cdn.discordapp.com/attachments/449047222462447617/584982883819585548/2.png"
-            alt="Logo"
-          >
-        </v-avatar>
-      </v-btn>
-        MWC
+          <v-avatar>
+            <img
+              src="https://cdn.discordapp.com/attachments/449047222462447617/584982883819585548/2.png"
+              alt="Logo" 
+            > 
+          </v-avatar>
+        </v-btn>
+         MWC
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
