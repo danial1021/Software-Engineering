@@ -135,8 +135,8 @@
 
       <form>
         
-        <label>Id</label>   
         <div class="form-group">
+        <label>Id</label>   
           <input type="text" class="form-control form-group col-md-6" style="" placeholder="" v-model="user.id" maxlength="15">
         </div> <!-- form-group end.// -->
 
