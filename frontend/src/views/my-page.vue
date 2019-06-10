@@ -421,9 +421,9 @@
   export default {
     data: () => ({
       drawer: null,
-    props: {
-      source: String
-    },  
+      props: {
+        source: String
+      },  
       dark: false,
       startMenu: false,
       start: '2019-01-12',

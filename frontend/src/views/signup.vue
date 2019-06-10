@@ -121,6 +121,8 @@
       </v-btn>
     </v-toolbar>
 <!-- -->
+
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -132,55 +134,58 @@
       <article class="card-body">
 
       <form>
-        <div class="form-row">
-
-          <div class="col form-group">
-            <label>Child name </label>   
-              <input type="text" class="form-control" placeholder="">
-          </div> <!-- form-group end.// -->
-
-          <div class="col form-group">
-            <label>Child's parent name</label>
-              <input type="text" class="form-control" placeholder=" ">
-          </div> <!-- form-group end.// -->
-
-        </div> <!-- form-row end.// -->
-
+        
+        <label>Id</label>   
+        <div class="form-group">
+          <input type="text" class="form-control form-group col-md-6" style="" placeholder="" v-model="user.id" maxlength="15">
+        </div> <!-- form-group end.// -->
 
         <div class="form-group">
           <label>Email address</label>
-          <input type="email" class="form-control" placeholder="">
+          <input type="email" class="form-control" placeholder="" v-model="user.email_address" maxlength="30">
           <small class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div> <!-- form-group end.// -->
 
 
         <div class="form-row">
-          <div class="form-group col-md-4">
-            <label>Academy</label>
-            <select id="inputState" class="form-control">
-                <option> Choose...</option>
-                <option>A학원</option>
-                <option>B학원</option>
-                <option selected="">C학원</option>
-                <option>A방과후</option>
-                <option>B방과후</option>
-            </select>
+          <div class="form-group col-md-6">
+
+            <v-select 
+            :items="academys"
+            label="Academy를 선택해주세요"
+            required v-model="academy">
+            </v-select>
+
           </div> <!-- form-group end.// -->
         </div> <!-- form-row.// -->
 
         <div class="form-group">
           <label>Create password</label>
-            <input class="form-control" type="password">
+            <v-text-field type="password" v-model="user.password" maxlength="30"></v-text-field>
         </div> <!-- form-group end.// -->  
 
-        <div class="form-group">
+        <div class="form-groups">
           <label>Confirmation password</label>
-            <input class="form-control" type="password">
+            <v-text-field type="password" v-model="user.confirm_password" maxlength="30"></v-text-field>
         </div> <!-- form-group end.// -->  
 
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block" > Register  </button>
+
+
+          <div class="row justify-content-center">
+
+              <!-- 버튼이 눌렸을때 무언가 작동을 하도록 만들자 -->
+              <v-btn
+                color="primary" 
+                @click="process_signup" 
+                
+                >
+                Register
+              </v-btn>
+          
+          
           </div> <!-- form-group// -->      
+
+
           <small class="text-muted">Because we are in the process of testing, <br>we can exclude the possibility of information leakage. </small>                                          
       </form>
 
@@ -192,17 +197,99 @@
 </div>           
 <!--container end.//-->
 <!-- -->
+
+
+  <v-snackbar v-model="snackbar">
+    {{ sbMsg }}
+    <v-btn color="pink" flat 
+    @click="snackbar = false">
+      Close
+    </v-btn>
+  </v-snackbar>
+
   </v-app>
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
-    data: () => ({
-      drawer: null
-    }),
+    data () {
+      return {
+        drawer: false,
+
+        // 변수 선언
+        //test_value: 1,
+        academy: 0,
+        academys: [],
+        user: {
+          id: "",
+          email_address: "",
+          password: "",
+          confirm_password: ""
+        },
+        snackbar: false,
+        sbMsg: ''
+      }
+    },
     props: {
       source: String
+    },
+
+    // 브라우저가 열리면 자동으로 실행되는 부분 (첫 한번)
+    mounted () {
+        this.academys.push("C언어 학원");
+        this.academys.push("JavaScript 학원");
+        this.academys.push("Nodejs 학원");
+        this.academys.push("JAVA 학원");
+        this.academys.push("HTML/CSS 학원");
+        this.academys.push("C# 학원");
+        this.academys.push("DB 학원");
+    },
+
+    // 자바스크립트로 함수를 만드는 부분
+    methods: {
+      // 이름이 process_signup 인 함수
+      process_signup() {
+         //console.log(this.test_value);
+         console.log(this.academy);
+         console.log(this.user.email_address);
+         console.log(this.user.id);
+         console.log(this.user.password + "/");
+         console.log(this.user.confirm_password + "/");
+
+        if(this.user.password != this.user.confirm_password){
+          this.pop("password를 확인해주세요");
+        }else{
+          // pop
+          this.signup();
+          this.pop("회원가입 양식이 전송되었습니다");
+        }
+      },
+
+
+      // 회원가입 시그널을 전송하는 함수
+      signup () {
+        // 전송을 시작하는 부분
+        // 주소는 백엔드의 기능을 가르킨다
+        axios.post('http://localhost:3000/signup_info', {
+          id : this.user.id,
+          email_address : this.user.email_address,
+          academy : this.academy,
+          password : this.user.password,
+          confirm_password : this.user.confirm_password
+        });
+      },
+
+      // 팝콘
+      pop (msg) {
+        this.snackbar = true
+        this.sbMsg = msg
+      }
+
     }
   }
 </script>
 
+<style>
+  
+</style>

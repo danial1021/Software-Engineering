@@ -9,15 +9,19 @@ const connection = new mysql({
   port: 3307,
   database: 'sw_project'
 });
-
 var router = express.Router();
 
 
-router.get('/', function(req, res, next) {
-    // 데이터베이스에 연결해서 샘플 값 아무거나 넣어보기
-    let result = connection.query(`insert into user values("admin", "password", "name", 0, 0)`);
-    res.send(result);
+
+router.post('/', function(req, res, next) {
+  // 데이터베이스에 연결해서 값 넣어보기
+  const { id, email_address, academy, password, confirm_password} = req.body
+
+  let result = connection.query(`INSERT INTO user (id,email,academy,password,confirm_password) 
+      VALUES("${id}", "${email_address}", "${academy}", "${password}","${confirm_password}")`);
+  res.send(result);
 });
+
 
 
 

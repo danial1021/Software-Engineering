@@ -191,8 +191,8 @@
         source: String
       },
       type: 'month',
-      start: Date.now.month,
-      end: new Date (),
+      start: '2019-1-1',
+      end: '2019-1-6',
       typeOptions: [
         { text: 'Day', value: 'day' },
         { text: 'Week', value: 'week' },
