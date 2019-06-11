@@ -126,7 +126,7 @@
       <v-card ref="form">
         <v-card-text>
 
-          <v-text-field
+          <!-- <v-text-field
             ref="name"
             v-model="name"
             :rules="[() => !!name || 'This field is required']"
@@ -136,22 +136,33 @@
             required
           ></v-text-field>
 
-            <br>
+            <br> -->
 
-          <v-text-field
+          <!-- <v-text-field
             ref="academy"
             v-model="academy"
             label="Academy-name"
             placeholder="OOO학원, OOO방과후 ..."
-          ></v-text-field>
+          ></v-text-field> -->
+          
+           <!-- <div class="form-row">
+            <div class="form-group col-md-6">
+
+              <v-select 
+              :items="academys"
+              label="Academy를 선택해주세요"
+              required v-model="academy">
+              </v-select>
+
+            </div> 
+          </div>  -->
 
             <br>
 
-          <v-text-field
-            ref="about_problem"
-            v-model="about_problem"
-            :rules="[() => !!about_problem || 'This field is required']"
+          <v-text-field            
+            v-model="user_require.problem"
             label="About_problem"
+            maxlength="100"
             required
             placeholder="기능, 디자인, OO버튼, 추가 기능 개선 ..."
           ></v-text-field>
@@ -159,23 +170,32 @@
             <br>
 
           <v-text-field
-            ref="phone_number"
-            v-model="phone_number"
-            :rules="[() => !!phone_number || 'This field is required']"
-            label="phone_number or email"
+            v-model="user_require.email_address"
+            label="Email_address"
+            maxlength="30"
             required
-            placeholder="010-OOOO-OOOO or xxx@xxx.xxx"
+            placeholder="xxx@xxx.xxx"
           ></v-text-field>
+
+          <!-- <v-text-field
+            ref="email_address"
+            v-model="email_address"
+            :rules="[() => !!email_number || 'This field is required']"
+            label="email_address"
+            maxlength="30"
+            required
+            placeholder="xxx@xxx.xxx"
+          ></v-text-field> -->
 
             <br>
 
         <v-text-field
             ref="title"
-            v-model="title"
-            :rules="[() => !!title || 'This field is required']"
+            v-model="user_require.title"
             label="제목을 입력하세요"
             single-line
             full-width
+            maxlength="30"
             hide-details
             required
          ></v-text-field>
@@ -184,7 +204,7 @@
         <hr class="hr1">
 
         <v-textarea
-            v-model="message"
+            v-model="user_require.context"
             placeholder="Message about your opinion"
             counter
             maxlength="500"
@@ -197,43 +217,97 @@
         <v-card-actions>
           <v-btn flat href="/send-feedback">Cancel</v-btn>
           <v-spacer></v-spacer>
-          <v-slide-x-reverse-transition>
-            <v-tooltip
-              v-if="formHasErrors"
-              left
-            >
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  class="my-0"
-                  @click="resetForm"
-                  v-on="on"
-                >
-                  <v-icon>refresh</v-icon>
-                </v-btn>
-              </template>
-              <span>Refresh form</span>
-            </v-tooltip>
-          </v-slide-x-reverse-transition>
-          <v-btn color="primary" flat @click="submit">Submit</v-btn>
+          <v-btn 
+            color="primary"
+            flat
+            @click="move"
+          >Submit</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
 
+  <v-snackbar v-model="snackbar">
+    {{ sbMsg }}
+    <v-btn color="pink" flat 
+    @click="snackbar = false">
+      Close
+    </v-btn>
+  </v-snackbar>
+
   </v-app>
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
-    data: () => ({
-      drawer: null
-    }),
+    data () {
+      return {
+        drawer: false,
+
+        // 변수 선언
+        user_require: {
+          problem: "",
+          email_address: "",
+          title: "",
+          context: ""  
+        },
+        snackbar: false,
+        sbMsg: ''
+      }
+    },
     props: {
       source: String
+    },
+
+
+    // 자바스크립트로 함수를 만드는 부분
+    methods: {
+      // 이름이 move 인 함수
+        move() {
+          console.log(this.user_require.problem);
+          console.log(this.user_require.email_address);
+          console.log(this.user_require.title);
+          console.log(this.user_require.context);
+
+        
+          // pop
+          // 모든 값이 있냐/없냐
+          if(this.user_require.problem != ""
+            && this.user_require.email_address != "" 
+            && this.user_require.title != "" 
+            && this.user_require.context != ""){
+
+              this.go();
+              this.pop("Feedback 해주셔서 감사합니다^^");
+            }else{
+              this.pop("내용을 더 채워주세요");
+            }
+        },
+      
+
+
+      // Feedback 시그널을 전송하는 함수
+      go () {
+        // 전송을 시작하는 부분
+        // 주소는 백엔드의 기능을 가르킨다
+        axios.post('http://localhost:3000/feedback', {
+          problem : this.user_require.problem,
+          email_address : this.user_require.email_address,
+          title : this.user_require.title,
+          context : this.user_require.context
+        });
+      },
+
+      // 팝콘
+      pop (msg) {
+        this.snackbar = true
+        this.sbMsg = msg
+      }
     }
   }
-</script>   
+</script> 
+
 
 <style>
     .hr1{

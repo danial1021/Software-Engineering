@@ -136,8 +136,17 @@
       <form>
         
         <div class="form-group">
-        <label>Id</label>   
-          <input type="text" class="form-control form-group col-md-6" style="" placeholder="" v-model="user.id" maxlength="15">
+          <label>Id</label>
+            <b-form inline>
+              <label class="sr-only" for="inline-form-input-name">Name</label>
+                <b-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  maxlength="15"
+                  v-model="user.id"
+                ></b-input>
+                <b-button variant="primary" @click="id_check">ID 중복 확인</b-button>
+            </b-form>
         </div> <!-- form-group end.// -->
 
         <div class="form-group">
@@ -277,6 +286,21 @@
           academy : this.academy,
           password : this.user.password,
           confirm_password : this.user.confirm_password
+        });
+      },
+
+      // 아이디 체크 함수
+      id_check () {
+        axios.post('http://localhost:3000/id_check', {
+          id : this.user.id
+        }).then((get_data)=>{
+          if(get_data) {
+            // 이거는 계정을 만들 수 있다!
+            this.pop("ID를 사용할 수 있습니다");
+          }else {
+            // 이거는 계정을 만들 수 없다!
+            this.pop("ID를 바꿔주세요");
+          }
         });
       },
 

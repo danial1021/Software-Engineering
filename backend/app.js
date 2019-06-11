@@ -21,6 +21,8 @@ app.use(cors());
 app.use('/api', require('./routes/api'));
 app.use('/signup_info', require('./routes/signup_info'));
 app.use('/login', require('./routes/login'));
+app.use('/feedback', require('./routes/feedback'));
+app.use('/id_check', require('./routes/id_check'));
 
 // localhost:3000/login
 // 화면에 "login 페이지입니다"

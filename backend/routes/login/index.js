@@ -12,17 +12,10 @@ const connection = new mysql({
 });
 
 router.get('/', function(req, res, next) {
-    // 데이터베이스에 연결해서 샘플 값 아무거나 넣어보기
+
     let result = connection.query(`select * from user`);
     res.send(result);
 });
-/*
-router
-.get
-.post
-*/
-
-
 
 
 
