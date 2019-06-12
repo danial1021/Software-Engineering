@@ -243,7 +243,7 @@
   export default {
     data () {
       return {
-        drawer: false,
+        drawer: null,
 
         // 변수 선언
         user_require: {
