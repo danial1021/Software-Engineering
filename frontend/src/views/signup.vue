@@ -7,7 +7,7 @@
     >
       <v-list><!-- dense -->
       
-        <v-list-tile @click="v-on" href="/">
+        <v-list-tile @click="movePage('/')">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -17,7 +17,7 @@
         </v-list-tile>
 
 
-        <v-list-tile @click="v-on" href="/my-page">
+        <v-list-tile @click="movePage('/my-page')">
           <v-list-tile-action>
             <v-icon>sentiment_satisfied_alt</v-icon>
           </v-list-tile-action>
@@ -27,7 +27,7 @@
         </v-list-tile>
 
 
-        <v-list-tile @click="v-on" href="/inquire">
+        <v-list-tile @click="movePage('/inquire')">
           <v-list-tile-action>
             <v-icon>assignment_ind</v-icon>
           </v-list-tile-action>
@@ -37,7 +37,7 @@
         </v-list-tile>
 
 
-        <v-list-tile @click="v-on" href="/store">
+        <v-list-tile @click="movePage('/store')">
           <v-list-tile-action>
             <v-icon>swap_horiz</v-icon>
           </v-list-tile-action>
@@ -46,7 +46,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/usage-information">
+        <v-list-tile @click="movePage('/usage-information')">
           <v-list-tile-action>
             <v-icon>highlight</v-icon>
           </v-list-tile-action>
@@ -55,7 +55,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/send-feedback">
+        <v-list-tile @click="movePage('/send-feedback')">
           <v-list-tile-action>
             <v-icon>create</v-icon>
           </v-list-tile-action>
@@ -64,7 +64,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/web-development-course">
+        <v-list-tile @click="movePage('/web-development-course')">
           <v-list-tile-action>
             <v-icon>perm_identity</v-icon>
           </v-list-tile-action>
@@ -93,16 +93,31 @@
       <v-toolbar-items class="hidden-sm-and-down">
       <v-container grid-list-md text-xs-center>
        <v-layout row wrap>
-        <v-flex>
+        <v-flex v-show="!this.$store.state.login">
           <v-card>
-            <v-btn color="purple accent-4" href="/login">Login&nbsp;
+            <v-btn color="purple accent-4" href="/login">Login &nbsp;
             <v-icon>account_circle</v-icon>
             </v-btn>
           </v-card>
         </v-flex>
-        <v-flex>
+        <v-flex v-show="!this.$store.state.login">
           <v-card>
             <v-btn color="red accent-3" href="/signup">SignUp
+            <v-icon>label_important</v-icon>
+            </v-btn>
+          </v-card>
+        </v-flex>
+
+        <v-flex v-show="this.$store.state.login" @click="free">
+          <v-card>
+            <v-btn color="purple accent-4" href="/">Logout
+            <v-icon>exit_to_app</v-icon>
+            </v-btn>
+          </v-card>
+        </v-flex>
+        <v-flex v-show="this.$store.state.login">
+          <v-card>
+            <v-btn color="red accent-3" href="/signup">Signup
             <v-icon>label_important</v-icon>
             </v-btn>
           </v-card>
@@ -304,10 +319,31 @@
         });
       },
 
+      
+      free () {
+        console.log(this.$store.state.login);
+        console.log(this.$store.state.token);
+
+        this.pop("로그아웃 성공");
+
+        this.$store.state.login = false;
+        this.$store.state.token = "";
+
+        console.log("반환 후");
+        console.log(this.$store.state.login);
+        console.log(this.$store.state.token);
+      },
+    
+
       // 팝콘
       pop (msg) {
         this.snackbar = true
         this.sbMsg = msg
+      },
+
+      movePage(pos)
+      {
+        this.$router.push(pos);
       }
 
     }

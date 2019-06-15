@@ -5,7 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    admin : false,
+    login : false,
+    token : ""
   },
   mutations: {
 

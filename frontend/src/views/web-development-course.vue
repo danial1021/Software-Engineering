@@ -7,7 +7,7 @@
     >
       <v-list><!-- dense -->
       
-        <v-list-tile @click="v-on" href="/">
+        <v-list-tile @click="movePage('/')">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -16,7 +16,8 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/my-page">
+
+        <v-list-tile @click="movePage('/my-page')">
           <v-list-tile-action>
             <v-icon>sentiment_satisfied_alt</v-icon>
           </v-list-tile-action>
@@ -25,7 +26,8 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/inquire">
+
+        <v-list-tile @click="movePage('/inquire')">
           <v-list-tile-action>
             <v-icon>assignment_ind</v-icon>
           </v-list-tile-action>
@@ -35,7 +37,7 @@
         </v-list-tile>
 
 
-        <v-list-tile @click="v-on" href="/store">
+        <v-list-tile @click="movePage('/store')">
           <v-list-tile-action>
             <v-icon>swap_horiz</v-icon>
           </v-list-tile-action>
@@ -44,7 +46,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/usage-information">
+        <v-list-tile @click="movePage('/usage-information')">
           <v-list-tile-action>
             <v-icon>highlight</v-icon>
           </v-list-tile-action>
@@ -53,7 +55,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/send-feedback">
+        <v-list-tile @click="movePage('/send-feedback')">
           <v-list-tile-action>
             <v-icon>create</v-icon>
           </v-list-tile-action>
@@ -62,7 +64,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="v-on" href="/web-development-course">
+        <v-list-tile @click="movePage('/web-development-course')">
           <v-list-tile-action>
             <v-icon>perm_identity</v-icon>
           </v-list-tile-action>
@@ -91,16 +93,31 @@
       <v-toolbar-items class="hidden-sm-and-down">
       <v-container grid-list-md text-xs-center>
        <v-layout row wrap>
-        <v-flex>
+        <v-flex v-show="!this.$store.state.login">
           <v-card>
-            <v-btn color="purple accent-4" href="/login">Login&nbsp;
+            <v-btn color="purple accent-4" href="/login">Login &nbsp;
             <v-icon>account_circle</v-icon>
             </v-btn>
           </v-card>
         </v-flex>
-        <v-flex>
+        <v-flex v-show="!this.$store.state.login">
           <v-card>
             <v-btn color="red accent-3" href="/signup">SignUp
+            <v-icon>label_important</v-icon>
+            </v-btn>
+          </v-card>
+        </v-flex>
+
+        <v-flex v-show="this.$store.state.login" @click="free">
+          <v-card>
+            <v-btn color="purple accent-4" href="/">Logout
+            <v-icon>exit_to_app</v-icon>
+            </v-btn>
+          </v-card>
+        </v-flex>
+        <v-flex v-show="this.$store.state.login">
+          <v-card>
+            <v-btn color="red accent-3" href="/signup">Signup
             <v-icon>label_important</v-icon>
             </v-btn>
           </v-card>
@@ -201,10 +218,13 @@
         <v-container>
           <v-layout wrap>
             <v-flex>
-              전체적인 틀을 vuetify의 테마을 이용하여 구현합니다. 내가 필요한 메뉴로 리뉴얼 한 후 각각의 페이지을 기능에 맞게 frontend을 구현합니다. 이런식으로 각각의 페이지를 구성합니다.
+              전체적인 틀을 vuetify의 테마을 이용하여 구현합니다. \
+              내가 필요한 메뉴로 리뉴얼 한 후 각각의 페이지을 기능에 맞게 frontend을 구현합니다. 
+              이런식으로 각각의 페이지를 구성합니다.
             </v-flex>
             <v-flex>
-              전체 웹페이지의 frontend가 완성되면, 여러 효과를 통하여 웹페이지를 좀 더 멋지게 바꿔줍니다. 또한, margin을 이용하여 배열에 신경쓰고, 기능 설명에 대한 설명을 기술합니다!
+              전체 웹페이지의 frontend가 완성되면, 여러 효과를 통하여 웹페이지를 좀 더 멋지게 바꿔줍니다.
+              또한, margin을 이용하여 배열에 신경쓰고, 기능 설명에 대한 설명을 기술합니다!
             </v-flex>
           </v-layout>
         </v-container>
@@ -233,7 +253,9 @@
               <v-icon size="64">mdi-server-network</v-icon>
             </v-flex>
             <v-flex xs10>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus.
+              axios를 이용하여 mysql(DB)와 연동하여 회원가입 처리나 로그인을 가능하게 했다. 
+              이러한 기능에도 각 각 되게 많은 조건과 처리들이 존재하여서 처음해보는 백엔드로써
+              노력했지만 실패한 것이 많다.
             </v-flex>
           </v-layout>
         </v-container>
@@ -259,7 +281,9 @@
         <v-container>
           <v-layout>
             <v-flex>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+              현재의 기능을 제대로 구현하고 추가적으로 feedback을 할 수 있는 페이지를 구현해 놓음으로써
+              추가적으로 개선해 나갈 것입니다. 또한 프로젝트가 커진다면 라즈베리 등을 통한
+              리눅스 서버를 돌린다던지 도메인 구매 등등 여러 가지 부가적인 요인들을 추가할 것입니다.
             </v-flex>
           </v-layout>
         </v-container>
@@ -277,6 +301,27 @@
     }),
     props: {
       source: String
+    },
+
+    methods : {
+      free () {
+        console.log(this.$store.state.login);
+        console.log(this.$store.state.token);
+
+        this.pop("로그아웃 성공");
+
+        this.$store.state.login = false;
+        this.$store.state.token = "";
+
+        console.log("반환 후");
+        console.log(this.$store.state.login);
+        console.log(this.$store.state.token);
+      },
+
+      movePage(pos)
+      {
+        this.$router.push(pos);
+      }
     }
   }
 </script>

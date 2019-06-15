@@ -1,6 +1,7 @@
 var express = require('express');
 var createError = require('http-errors');
 var mysql = require('sync-mysql');
+const uuidv4 = require('uuid/v4');
 
 const connection = new mysql({
   host: '127.0.0.1',
@@ -16,10 +17,17 @@ var router = express.Router();
 router.post('/', function(req, res, next) {
   // 데이터베이스에 연결해서 값 넣어보기
   const { id, email_address, academy, password, confirm_password} = req.body
-
-  let result = connection.query(`INSERT INTO user (id,email,academy,password,confirm_password) 
-      VALUES("${id}", "${email_address}", "${academy}", "${password}","${confirm_password}")`);
-  res.send(result);
+  console.log(uuidv4());
+  try
+  {
+    let result = connection.query(`INSERT INTO user (id,email,academy,password,confirm_password,token,admin) 
+        VALUES("${id}", "${email_address}", "${academy}", "${password}","${confirm_password}", "${uuidv4()}",false)`);
+    res.send(result);
+  }
+  catch(e)
+  {
+    console.log(e);
+  }
 });
 
 
