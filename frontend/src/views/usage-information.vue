@@ -364,8 +364,15 @@
     </v-flex>
   </v-layout>
   </div>
-
 </div>
+
+  <v-snackbar v-model="snackbar">
+      {{ sbMsg }}
+      <v-btn color="pink" flat
+      @click="snackbar = false">
+        Close
+      </v-btn>
+  </v-snackbar>
 
   </v-app>
 </template>
@@ -375,7 +382,9 @@
     data: () => ({
       drawer: null,
       show1: false,
-      show2: false
+      show2: false,
+      snackbar: false,
+      sbMsg: '',
     }),
     props: {
       source: String
@@ -399,6 +408,12 @@
       movePage(pos)
       {
         this.$router.push(pos);
+      },
+
+      // 팝콘
+      pop (msg) {
+        this.snackbar = true
+        this.sbMsg = msg
       }
     }
   }

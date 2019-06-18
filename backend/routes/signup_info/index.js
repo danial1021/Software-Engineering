@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
   try
   {
     let result = connection.query(`INSERT INTO user (id,email,academy,password,confirm_password,token,admin) 
-        VALUES("${id}", "${email_address}", "${academy}", "${password}","${confirm_password}", "${uuidv4()}",false)`);
+        VALUES("${id}", "${email_address}", "${academy}", "${password}","${confirm_password}", "${uuidv4()}",0)`);
     res.send(result);
   }
   catch(e)

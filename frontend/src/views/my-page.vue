@@ -236,7 +236,6 @@
         </v-date-picker>
       </v-menu>
       <v-menu
-        v-if="hasEnd"
         ref="endMenu"
         v-model="endMenu"
         :close-on-content-click="false"
@@ -395,6 +394,15 @@
     </v-flex>
   </v-layout>
   <!-- 달력 끝 -->
+
+    <v-snackbar v-model="snackbar">
+        {{ sbMsg }}
+        <v-btn color="pink" flat 
+        @click="snackbar = false">
+          Close
+        </v-btn>
+    </v-snackbar> 
+
   </v-app>
 </template>
 
@@ -440,6 +448,8 @@
       props: {
         source: String
       },  
+      snackbar: false,
+      sbMsg: '',
       dark: false,
       startMenu: false,
       start: '2019-01-12',
@@ -538,6 +548,12 @@
       movePage(pos)
       {
         this.$router.push(pos);
+      },
+
+      // 팝콘
+        pop (msg) {
+          this.snackbar = true
+          this.sbMsg = msg
       }
     
     }

@@ -21,14 +21,16 @@ router.post('/', function(req, res, next) {
 
     var decoded = jwt.decode(token);
     
-    let result = connection.query(`select * from user where id = "${decoded.payload.id}"`);
+    let result = connection.query(`select * from user where id = "${decoded.id}"`);
     // user 테이블에서 id가 admin인 행의 token 값을 가져옴
     var decoded = jwt.verify(token, result[0].token);
     if(result[0].admin)
     {
       res.send("true");
+      return;
     }
     res.send("false");
+    return;
   }
   catch(e)
   {

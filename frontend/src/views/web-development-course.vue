@@ -291,17 +291,28 @@
     </v-timeline-item>
   </v-timeline>
 
+    <v-snackbar v-model="snackbar">
+        {{ sbMsg }}
+        <v-btn color="pink" flat
+        @click="snackbar = false">
+          Close
+        </v-btn>
+    </v-snackbar>
+
   </v-app>
 </template>
 
 <script>
   export default {
     data: () => ({
-      drawer: null
+      drawer: null,
+      snackbar: false,
+      sbMsg: ''
     }),
     props: {
       source: String
     },
+    
 
     methods : {
       free () {
@@ -321,6 +332,12 @@
       movePage(pos)
       {
         this.$router.push(pos);
+      },
+
+      // 팝콘
+      pop (msg) {
+        this.snackbar = true
+        this.sbMsg = msg
       }
     }
   }

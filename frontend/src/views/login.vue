@@ -200,7 +200,7 @@
     data () {
       return {
         drawer: false,
-
+        jwt : require('jsonwebtoken'),
         // 변수 선언
         user: {
           id: "",
@@ -239,7 +239,7 @@
           password : this.user.password
         }).then((r)=>
         {
-          console.log(r.data);
+          
           switch(r.data.id)
           {
             case 0:
@@ -257,8 +257,16 @@
               this.$store.state.login = true;
               this.$store.state.token = r.data.token;
 
-              var decoded = jwt.decode(token);
-              this.$store.state.admin = decoded.payload.admin;
+              var decoded = this.jwt.decode(r.data.token);
+              console.log(decoded);
+              if(decoded.admin == 0)
+              {
+                this.$store.state.admin = false;
+              }
+              else
+              {
+                this.$store.state.admin = true;
+              }
               break;
           }
         });

@@ -194,6 +194,15 @@
 
   </v-layout>
   <!-- 달력 끝 -->
+
+    <v-snackbar v-model="snackbar">
+      {{ sbMsg }}
+      <v-btn color="pink" flat
+      @click="snackbar = false">
+        Close
+      </v-btn>
+    </v-snackbar>
+
   </v-app>
 </template>
 
@@ -205,6 +214,8 @@
       props:{
         source: String
       },
+      snackbar: false,
+      sbMsg: '',
       type: 'month',
       start: '2019-1-1',
       end: '2019-1-6',
@@ -233,6 +244,12 @@
       movePage(pos)
       {
         this.$router.push(pos);
+      },
+      
+      // 팝콘
+      pop (msg) {
+        this.snackbar = true
+        this.sbMsg = msg
       }
     }
   

@@ -309,7 +309,7 @@
         axios.post('http://localhost:3000/id_check', {
           id : this.user.id
         }).then((get_data)=>{
-          if(get_data) {
+          if(get_data.data) {
             // 이거는 계정을 만들 수 있다!
             this.pop("ID를 사용할 수 있습니다");
           }else {

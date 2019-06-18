@@ -28,16 +28,20 @@ router.post('/', function(req, res, next) {
         {
           let token = uuidv4();
           let updateToken = connection.query(`update user set token = "${token}" where id = "${id}"`);
-
+          
           var jwt_ = jwt.sign({ id: id, admin: result[0].admin }, token);
-          console.log(jwt_);
+          console.log(result[0].admin);
           res.send({id : 3, token : jwt_}); // 로그인 성공
+          return;   
         }
         res.send({id: 2}); // 비밀번호 틀림
+        return;
       }
       res.send({id: 1}); // 이메일 틀림
+      return;
     }
     res.send({id: 0}); // 아이디 틀림
+    return;
   }
   catch(e)
   {

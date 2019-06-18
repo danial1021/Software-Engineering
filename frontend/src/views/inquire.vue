@@ -309,7 +309,9 @@
       </div>           
       </div>
     </div>
-    <div v-else @click="back"></div>
+    <div v-else @click="back">
+      
+    </div>
 
     <v-snackbar v-model="snackbar">
       {{ sbMsg }}
@@ -323,11 +325,14 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     data: () => ({
       drawer: null,
-      admin : false
-    }),
+      admin : false,
+      snackbar: false,
+      sbMsg: ''
+    }), 
     props: {
       source: String
     },
@@ -359,16 +364,18 @@
         axios.post('http://localhost:3000/token_check', {
           token: this.$store.state.token
         }).then((r)=>{
-          
+          console.log(r.data)
           switch(r.data)
           {
             case "false":
               this.pop("inquire 페이지 접근 불가");
               this.admin = false;
+              this.$store.state.token = false;
               break;
             case "true":
               this.pop("inquire 페이지 접근 가능");       
               this.admin = true;
+              this.$store.state.token = true;
               break;
           }
         });

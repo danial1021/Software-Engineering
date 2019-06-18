@@ -245,6 +245,14 @@
 </div>           
 <!---->
 
+    <v-snackbar v-model="snackbar">
+      {{ sbMsg }}
+      <v-btn color="pink" flat
+      @click="snackbar = false">
+        Close
+      </v-btn>
+    </v-snackbar>
+
  </v-app>
 </template>
 
@@ -258,6 +266,8 @@
       date2: new Date().toISOString().substr(0, 10),
       menu1: false,
       menu2: false,
+      snackbar: false,
+      sbMsg: '',
       items: [
         { text: 'Sunday - Saturday'},
         { text: 'Mon, Wed, Fri' },
@@ -283,9 +293,16 @@
         console.log(this.$store.state.login);
         console.log(this.$store.state.token);
       },
+
       movePage(pos)
       {
         this.$router.push(pos);
+      },
+
+      // 팝콘
+      pop (msg) {
+        this.snackbar = true
+        this.sbMsg = msg
       }
     }
   }
