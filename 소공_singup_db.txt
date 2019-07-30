@@ -1,0 +1,28 @@
+ CREATE TABLE user(
+     id varchar(15) NOT NULL,
+     email varchar(30) NOT NULL,
+     academy varchar(30) NOT NULL,
+     password varchar(30) NOT NULL,
+     confirm_password varchar(30) NOT NULL,
+     token varchar(50) NOT NULL,
+     primary key(id));
+
+turncate user;
+select * from user;
+
+
+
+ CREATE TABLE user_require(
+     problem varchar(200) NOT NULL,
+     email varchar(30) NOT NULL,
+     title varchar(60) NOT NULL,
+     context varchar(1000) NOT NULL);
+
+ CREATE TABLE user_store(
+     date1 varchar(10) NOT NULL,
+     date2 varchar(10) NOT NULL,
+     summary_text varchar(30) NOT NULL,
+     password varchar(30) NOT NULL);
+
+
+
